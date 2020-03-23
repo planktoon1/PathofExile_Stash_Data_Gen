@@ -1,0 +1,24 @@
+{
+  "name": "pathofexile_stash_data_gen",
+  "version": "1.0.0",
+  "description": "Generate datafiles for \"Path of Exile - Stash\"",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "gen": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planktoon1/PathofExile_Stash_Data_Gen.git"
+  },
+  "author": "Planktoon1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/planktoon1/PathofExile_Stash_Data_Gen/issues"
+  },
+  "homepage": "https://github.com/planktoon1/PathofExile_Stash_Data_Gen#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
