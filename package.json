@@ -20,5 +20,8 @@
   "homepage": "https://github.com/planktoon1/PathofExile_Stash_Data_Gen#readme",
   "devDependencies": {
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/node": "^13.9.3"
   }
 }
