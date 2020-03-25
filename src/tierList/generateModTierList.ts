@@ -6,9 +6,12 @@ import {
 } from "../models/interfaces";
 import { getInfluenceTags } from "./itemClasses";
 import { TierList, TierListLookUp, ModDetails } from "../models/tierListModels";
+import { modIsWithin } from "../utility/modIsWithin";
 
 const MODLIST: ModOutputDict = require("../../input/RePoE_Data/mods.min.json");
 const BASEITEMLIST: BaseItemDict = require("../../input/RePoE_Data/base_items.min.json");
+
+console.log("🌟 Generating mod tier list 🌟");
 
 /** A mapping between mod name and associated spawn_weight tag */
 export const influenceMods = {
@@ -178,7 +181,7 @@ for (const [tierGroupName, tierGroup] of Object.entries(tierList)) {
   }
 }
 console.log(
-  `tierList has been generated with '${
+  `   tierList has been generated with '${
     Object.keys(tierList).length
   }' tierGroups/"sub"itemclasses`
 );
@@ -216,7 +219,7 @@ for (let [tierGroupName, tierGroup] of Object.entries(tierList)) {
   }
 }
 console.log(
-  `tierGroup_tierListLookUp has been generated with '${modCount}' mods across '${
+  `   tierGroup_tierListLookUp has been generated with '${modCount}' mods across '${
     Object.keys(tierGroup_tierListLookUp).length
   }' tierGroups`
 );
@@ -242,30 +245,16 @@ for (let [tierGroupName, tierGroupData] of Object.entries(tierList)) {
       // If an entry for the modId already exists compare the existing entry with the new entry
     } else if (itemClass_modTierLookup[itemClass][modId] !== tier) {
       console.log(
-        `mod: '${modId}' has tier: '${tier}' in tierGroup: '${tierGroupName}' but tier: '${itemClass_modTierLookup[itemClass][modId]}' in another tierGroup, thus assumption 2 is wrong`
+        `   mod: '${modId}' has tier: '${tier}' in tierGroup: '${tierGroupName}' but tier: '${itemClass_modTierLookup[itemClass][modId]}' in another tierGroup, thus assumption 2 is wrong`
       );
     }
   }
 }
 console.log(
-  `itemClass_modTierLookup has been generated with '${modCount2}' mods across '${
+  `   itemClass_modTierLookup has been generated with '${modCount2}' mods across '${
     Object.keys(itemClass_modTierLookup).length
   }' item classes`
 );
-
-/*
-    Utility functions
-*/
-export function modIsWithin(
-  modData: ModOutput,
-  domains: string[] = [],
-  generationType: string[] = []
-): boolean {
-  return (
-    domains.includes(modData.domain) &&
-    generationType.includes(modData.generation_type)
-  );
-}
 
 /** Get the tier group a specific baseitem belongs to */
 export const getTierGroup = (baseItem: Pick<BaseItem, "tags">): string => {
