@@ -9,7 +9,7 @@ const MODLIST: ModOutputDict = (modlist as unknown) as ModOutputDict;
 const filterMods = (modlist: ModOutputDict) => {
   const itemModList: ModOutputDict = {};
   for (let [modName, modData] of Object.entries(modlist)) {
-    if (modIsWithin(modData, ["item"], ["suffix", "prefix"])) {
+    if (modIsWithin(modData, ["item"], ["suffix", "prefix", "unique"])) {
       itemModList[modName] = modData;
     }
   }
