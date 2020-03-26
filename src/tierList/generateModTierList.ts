@@ -1,15 +1,12 @@
-import {
-  ModOutputDict,
-  BaseItemDict,
-  ModOutput,
-  BaseItem
-} from "../models/interfaces";
+import { ModOutputDict, BaseItemDict, BaseItem } from "../models/interfaces";
 import { getInfluenceTags } from "./itemClasses";
 import { TierList, TierListLookUp, ModDetails } from "../models/tierListModels";
 import { modIsWithin } from "../utility/modIsWithin";
 
-const MODLIST: ModOutputDict = require("../../input/RePoE_Data/mods.min.json");
-const BASEITEMLIST: BaseItemDict = require("../../input/RePoE_Data/base_items.min.json");
+import * as modlist from "../../input/RePoE_Data/RePoE/data/mods.min.json";
+const MODLIST = (modlist as unknown) as ModOutputDict;
+import * as baseitemlist from "../../input/RePoE_Data/RePoE/data/base_items.min.json";
+const BASEITEMLIST = (baseitemlist as unknown) as BaseItemDict;
 
 console.log("🌟 Generating mod tier list 🌟");
 

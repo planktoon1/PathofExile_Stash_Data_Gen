@@ -2,7 +2,8 @@ import { ModDict, ModOutputDict } from "../models/interfaces";
 import { getModDescription } from "../utility/translation/translation";
 import { modIsWithin } from "../utility/modIsWithin";
 
-const MODLIST: ModOutputDict = require("../../input/RePoE_Data/mods.min.json");
+import modlist from "../../input/RePoE_Data/RePoE/data/mods.min.json";
+const MODLIST: ModOutputDict = (modlist as unknown) as ModOutputDict;
 
 /** Used to filter the mod list to only contain valid item mods, to avoid iterating over irrelevant data */
 const filterMods = (modlist: ModOutputDict) => {

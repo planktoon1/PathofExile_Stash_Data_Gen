@@ -1,12 +1,11 @@
 import { ModOutputDict } from "../models/interfaces";
+import { modIsWithin } from "../utility/modIsWithin";
 import {
   getDetailedTierList,
-  influenceMods,
-  modIsWithin,
-  getTierGroupTierListLookUp
+  getTierGroupTierListLookUp,
+  influenceMods
 } from "./generateModTierList";
-import { TierListLookUp } from "../models/tierListModels";
-const MODLIST: ModOutputDict = require("../../input/RePoE_Data/mods.min.json");
+const MODLIST: ModOutputDict = require("../../input/RePoE_Data/RePoE/data/mods.min.json");
 const TIERLIST = getDetailedTierList();
 
 /*######################################################### 

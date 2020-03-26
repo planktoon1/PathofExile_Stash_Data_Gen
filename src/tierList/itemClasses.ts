@@ -1,6 +1,6 @@
 import { ItemClassDict } from "../models/interfaces";
 
-const ITEMCLASSES: ItemClassDict = require("../../input/RePoE_Data/item_classes.min.json");
+import * as ITEMCLASSES from "../../input/RePoE_Data/RePoE/data/item_classes.min.json";
 
 const tagToItemClass: { [tag: string]: string[] } = {};
 const itemClassToInfluenceTags: { [itemClas: string]: string[] } = {};

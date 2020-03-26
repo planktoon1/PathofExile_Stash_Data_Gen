@@ -11,7 +11,7 @@ import { isEmpty, onlyUnique, isIterable } from "../utilityFunctions";
 import { formats } from "./format";
 import { indexHandlers } from "./indexHandlers";
 
-const modTranslations = require("../../../input/RePoE_Data/stat_translations.min.json");
+const modTranslations = require("../../../input/RePoE_Data/RePoE/data/stat_translations.min.json");
 
 const applyIndexHandlers = (
   entry: TranslationEntry,
