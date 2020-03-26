@@ -1,5 +1,6 @@
 # 
 output/*
+input/RePoE_Data
 
 # Logs
 logs
