@@ -18,7 +18,7 @@ export const writeFiles = (obj: any, filename: string) => {
       `Wrote json to ${Directories.OUTPUT_DIR_readable}/${filename}.json`
     );
     fs.writeFileSync(
-      `${Directories.OUTPUT_DIR_minified}/${filename}.json`,
+      `${Directories.OUTPUT_DIR_minified}/${filename}.min.json`,
       json_min,
       "utf8"
     );
