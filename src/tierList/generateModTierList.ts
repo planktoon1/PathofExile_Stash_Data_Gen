@@ -108,6 +108,9 @@ for (let [modId, modData] of Object.entries(MODLIST)) {
   const influenceTagSuffix = influenceMods[modData.name];
   if (influenceTagSuffix) {
     for (const spawnWeight of modData.spawn_weights) {
+      if (spawnWeight.weight === 0) {
+        continue;
+      }
       const tierGroups = influenceTagToTierGroupLookup[spawnWeight.tag];
       if (tierGroups) {
         for (const tierGroup of tierGroups) {
