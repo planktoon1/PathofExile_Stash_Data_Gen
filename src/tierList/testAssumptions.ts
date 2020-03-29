@@ -61,6 +61,8 @@ const assumption2IsTrue = (): boolean => {
       [modId: string]: number;
     };
   } = {};
+  // Only reason we run through the detailed tier list here is to get each "sub"itemclass, and the itemclass that the "sub"itemclass belongs to.
+  // Every toplevel entry in the detailed tier list is a different "sub"itemclass, here i call them tierGroups
   for (let [tierGroupName, tierGroupData] of Object.entries(TIERLIST)) {
     const itemClass = tierGroupData.itemClass;
     for (let [modId, tier] of Object.entries(TIERLISTLOOKUP[tierGroupName])) {
